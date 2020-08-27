@@ -1,0 +1,150 @@
+body {
+  background-color: #03a9f4;
+}
+form {
+  padding-bottom: 12px;
+}
+i {
+  transition: all 200ms ease;
+}
+i:hover {
+  font-size: larger;
+}
+h1 {
+  color: #231816;
+  font-weight: 600;
+  font-size: 50px;
+}
+h2 {
+  color: #231816;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+h3 {
+  color: #bababa;
+  font-weight: 400;
+  margin-bottom: 0;
+  font-size: 25px;
+}
+p {
+  color: #bababa;
+  font-size: 15px;
+}
+
+li {
+  color: #bababa;
+  font-size: 15px;
+}
+li strong {
+  color: #231816;
+}
+h3 strong {
+  font-weight: 500;
+  color: #9b9b9b;
+}
+footer {
+  margin-top: 60px;
+  font-weight: 300;
+  color: #231816;
+}
+footer a {
+  text-decoration: none;
+  color: #231816;
+  font-weight: 400;
+}
+footer a:hover {
+  color: #231816;
+  text-decoration: underline;
+}
+.units {
+  position: relative;
+  top: -24px;
+  left: -10px;
+  color: #231816;
+  font-size: 15px;
+}
+.today,
+.today-date,
+.today-temp-all,
+.week-day,
+.week-temp {
+  text-align: left;
+}
+.location,
+.weather-stats {
+  text-align: right;
+}
+.today-icon,
+.week-icon {
+  text-align: center;
+}
+.container {
+  margin-top: 30px;
+  font-family: "Rubik", sans-serif;
+}
+.card {
+  display: block;
+  margin: 0 auto;
+  max-width: 400px;
+}
+.hr-1 {
+  margin-top: 0;
+}
+.hr-2 {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.weather-stats {
+  list-style: none;
+  padding: 0;
+}
+.weather-stats-col {
+  padding-left: 0;
+}
+.search-btn {
+  color: #b2b2b2;
+  margin-left: 10px;
+}
+.location-btn {
+  color: #eb4336;
+  margin-left: 10px;
+}
+.change-temp-btn:hover {
+  color: #231816;
+  text-decoration: none;
+}
+.today-temp-all {
+  padding-right: 0;
+}
+.today-img {
+  width: 62px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  left: -17px;
+}
+.week-img {
+  width: 40px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  right: -16px;
+  top: -5px;
+}
+.date-country {
+  height: 50px;
+}
+.week-temp {
+  text-align: right;
+}
+.form {
+  margin: 0;
+}
+.col-1 {
+  padding: 0px;
+  border: none;
+}
+.weather-description {
+  text-transform: capitalize;
+  margin-bottom: 0;
+}
