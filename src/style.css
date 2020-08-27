@@ -46,18 +46,22 @@ h3 strong {
   color: #9b9b9b;
 }
 footer {
-  margin-top: 60px;
+  padding-top: 12px;
   font-weight: 300;
   color: #231816;
+  font-size: 14px;
+  display: block;
+  margin: 0 auto;
+  max-width: 400px;
 }
 footer a {
   text-decoration: none;
   color: #231816;
-  font-weight: 400;
+  text-decoration: underline;
 }
 footer a:hover {
   color: #231816;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .units {
   position: relative;
