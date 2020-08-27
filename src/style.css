@@ -25,7 +25,6 @@ h2 {
 }
 h3 {
   color: #bababa;
-  font-weight: 400;
   margin-bottom: 0;
   font-size: 25px;
 }
@@ -55,9 +54,9 @@ footer {
   max-width: 400px;
 }
 footer a {
-  text-decoration: none;
-  color: #231816;
   text-decoration: underline;
+  color: #231816;
+  font-weight: 300;
 }
 footer a:hover {
   color: #231816;
@@ -92,7 +91,7 @@ footer a:hover {
 .card {
   display: block;
   margin: 0 auto;
-  max-width: 400px;
+  max-width: 450px;
 }
 .hr-1 {
   margin-top: 0;
