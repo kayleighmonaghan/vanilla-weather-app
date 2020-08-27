@@ -19,8 +19,9 @@ h2 {
   color: #231816;
   font-weight: 500;
   margin-bottom: 0;
-  overflow: auto;
+  overflow: hidden;
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 h3 {
   color: #bababa;
