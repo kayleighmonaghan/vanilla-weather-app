@@ -88,7 +88,7 @@ a:hover {
   max-width: 450px;
 }
 .hr-1 {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 .hr-2 {
   margin-top: 10px;
@@ -117,7 +117,7 @@ a:hover {
   margin: 0 auto;
   position: relative;
   left: -50px;
-  bottom: 50px;
+  bottom: 55px;
 }
 .week-img {
   width: 40px;
