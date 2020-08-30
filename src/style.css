@@ -94,10 +94,6 @@ a:hover {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.weather-stats {
-  list-style: none;
-  padding: 0;
-}
 .weather-stats-col {
   padding-left: 0;
 }
