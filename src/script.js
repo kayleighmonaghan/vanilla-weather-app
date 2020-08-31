@@ -1,16 +1,18 @@
 // current date/time
-function formatDate(now) {
-  let hours = now.getHours();
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+
+  let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
 
-  let minutes = now.getMinutes();
+  let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
 
-  let dayIndex = now.getDay();
+  let dayIndex = date.getDay();
   let days = [
     "Sunday",
     "Monday",
@@ -22,7 +24,7 @@ function formatDate(now) {
   ];
   let day = days[dayIndex];
 
-  return `${day}, ${hours}:${minutes}`;
+  return ` ${day}, ${hours}:${minutes}`;
 }
 
 // unit change buttons
@@ -63,6 +65,8 @@ function displayWeather(response) {
   let description = response.data.weather[0].description;
   let decscriptionHeading = document.querySelector("#weather-description");
   decscriptionHeading.innerHTML = description;
+
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function searchCity(city) {
@@ -95,9 +99,7 @@ function getGeolocation() {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
 
-let dateElement = document.querySelector("#current-time-date");
-let now = new Date();
-dateElement.innerHTML = formatDate(now);
+let dateElement = document.querySelector("#date-element");
 
 // let farenheitLink = document.querySelector("#farenheit-link");
 // farenheitLink.addEventListener("click", convertToFarenheit);

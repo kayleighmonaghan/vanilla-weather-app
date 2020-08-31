@@ -44,6 +44,9 @@ li {
 li strong {
   color: #231816;
 }
+li:first-letter {
+  text-transform: capitalize;
+}
 h3 strong {
   font-weight: 500;
   color: #9b9b9b;
@@ -142,7 +145,6 @@ a:hover {
   border: none;
 }
 .weather-description {
-  text-transform: capitalize;
   margin-bottom: 0;
 }
 .bottom {
