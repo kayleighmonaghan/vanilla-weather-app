@@ -39,7 +39,48 @@ function formatDate(timestamp) {
 //   let currentTemp = document.querySelector("#current-temp");
 //   currentTemp.innerHTML = 13;
 // }
+function formatImage(icon) {
+  let clear = "images/01d.png";
+  let clearNight = "images/01n.png";
+  let fewClouds = "images/02d.png";
+  let fewCloudsNight = "images/02n.png";
+  let clouds = "images/03d.png";
+  let showerRain = "images/09d.png";
+  let rain = "images/10d.png";
+  let rainNight = "images/10n.png";
+  let thunderstorm = "images/11d.png";
+  let snow = "images/13d.png";
+  let mist = "images/50d.png";
 
+  if (icon === "01d") {
+    return clear;
+  } else if (icon === "01n") {
+    return clearNight;
+  } else if (icon === "02d") {
+    return fewClouds;
+  } else if (icon === "02n") {
+    return fewCloudsNight;
+  } else if (
+    icon === "03d" ||
+    icon === "04d" ||
+    icon === "03n" ||
+    icon === "04n"
+  ) {
+    return clouds;
+  } else if (icon === "09d" || icon === "09n") {
+    return showerRain;
+  } else if (icon === "10d") {
+    return rain;
+  } else if (icon === "10n") {
+    return rainNight;
+  } else if (icon === "11d" || icon === "11n") {
+    return thunderstorm;
+  } else if (icon === "13d" || icon === "13n") {
+    return snow;
+  } else if (icon === "50d" || icon === "50n") {
+    return mist;
+  }
+}
 // geolocation & search city
 function displayWeather(response) {
   let temperature = Math.round(response.data.main.temp);
@@ -67,6 +108,10 @@ function displayWeather(response) {
   decscriptionHeading.innerHTML = description;
 
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+
+  let iconElement = document.querySelector("#today-img");
+  iconElement.setAttribute("src", formatImage(response.data.weather[0].icon));
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {
