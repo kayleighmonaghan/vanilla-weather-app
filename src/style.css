@@ -59,7 +59,7 @@ a:hover {
   text-align: right;
 }
 .container {
-  margin-top: 30px;
+  margin-top: 50px;
   font-family: "Rubik", sans-serif;
 }
 .card {
@@ -92,6 +92,13 @@ a:hover {
   color: #231816;
   font-size: 15px;
 }
+.active {
+  color: #231816;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
+}
 .today-img-div {
   height: 0;
 }
@@ -121,11 +128,4 @@ a:hover {
 }
 .bottom-row {
   height: 29px;
-}
-.active {
-  color: #231816;
-  cursor: default;
-}
-.active:hover {
-  text-decoration: none;
 }
