@@ -33,6 +33,8 @@ ul {
   list-style: none;
   color: #bababa;
   font-size: 15px;
+  overflow: visible;
+  white-space: nowrap;
 }
 li strong {
   color: #231816;
