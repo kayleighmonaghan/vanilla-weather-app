@@ -31,13 +31,6 @@ h3 {
 ul {
   padding: 0;
   list-style: none;
-}
-p {
-  color: #bababa;
-  font-size: 15px;
-}
-
-li {
   color: #bababa;
   font-size: 15px;
 }
@@ -109,10 +102,10 @@ a:hover {
   color: #eb4336;
   margin-left: 10px;
 }
-.today-temp-all {
+.today-temp-div {
   padding-right: 0;
 }
-.primary-img {
+.today-img-div {
   height: 0;
 }
 .today-img {
@@ -147,6 +140,6 @@ a:hover {
 .weather-description {
   margin-bottom: 0;
 }
-.bottom {
+.bottom-row {
   height: 29px;
 }
