@@ -33,7 +33,6 @@ ul {
   list-style: none;
   color: #bababa;
   font-size: 15px;
-  overflow: visible;
   white-space: nowrap;
 }
 li strong {
@@ -93,8 +92,8 @@ a:hover {
   margin-top: 15px;
   margin-bottom: 10px;
 }
-.weather-stats-col {
-  padding-left: 0;
+.bottom-row {
+  height: 29px;
 }
 .search-btn {
   color: #b2b2b2;
@@ -141,7 +140,4 @@ a:hover {
 }
 .weather-description {
   margin-bottom: 0;
-}
-.bottom-row {
-  height: 29px;
 }

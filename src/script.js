@@ -24,7 +24,7 @@ function formatDate(timestamp) {
   ];
   let day = days[dayIndex];
 
-  return `Updated on ${day}, ${hours}:${minutes}`;
+  return `Last updated: ${day}, ${hours}:${minutes}`;
 }
 
 // unit change buttons
