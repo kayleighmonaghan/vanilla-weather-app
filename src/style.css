@@ -122,3 +122,10 @@ a:hover {
 .bottom-row {
   height: 29px;
 }
+.active {
+  color: #231816;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
+}

@@ -1,4 +1,4 @@
-// current date/time
+// time last updated
 function formatDate(timestamp) {
   let date = new Date(timestamp);
 
@@ -27,18 +27,7 @@ function formatDate(timestamp) {
   return `Last updated: ${day}, ${hours}:${minutes}`;
 }
 
-// unit change buttons
-// function convertToFarenheit(event) {
-//   event.preventDefault();
-//   let currentTemp = document.querySelector("#current-temp");
-//   currentTemp.innerHTML = Math((currentTemp * 9) / 5 + 32);
-// }
-
-// function convertToCelsius(event) {
-//   event.preventDefault();
-//   let currentTemp = document.querySelector("#current-temp");
-//   currentTemp.innerHTML = 13;
-// }
+// change weather image
 function formatImage(icon) {
   let clear = "images/01d.png";
   let clearNight = "images/01n.png";
@@ -81,11 +70,14 @@ function formatImage(icon) {
     return mist;
   }
 }
-// geolocation & search city
+
+// weather main function
 function displayWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = temperature;
+
+  celsiusTemperature = response.data.main.temp;
 
   let city = response.data.name;
   let cityHeading = document.querySelector("#location");
@@ -144,18 +136,39 @@ function getGeolocation() {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
 
+function convertToFarenheit(event) {
+  event.preventDefault();
+  let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = Math.round(farenheitTemperature);
+
+  celsiusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+  farenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+}
+
+let celsiusTemperature = null;
+
 let dateElement = document.querySelector("#date-element");
-
-// let farenheitLink = document.querySelector("#farenheit-link");
-// farenheitLink.addEventListener("click", convertToFarenheit);
-
-// let celsiusLink = document.querySelector("#celsius-link");
-// celsiusLink.addEventListener("click", convertToCelsius);
 
 let searchForm = document.querySelector("#city-search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 let geoButton = document.querySelector("#location-btn");
 geoButton.addEventListener("click", getGeolocation);
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", convertToFarenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
 
 searchCity("Glasgow");
