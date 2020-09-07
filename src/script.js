@@ -1,5 +1,4 @@
-// time last updated
-function formatDate(timestamp) {
+function formatHours(timestamp) {
   let date = new Date(timestamp);
 
   let hours = date.getHours();
@@ -11,6 +10,13 @@ function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+
+  return `${hours}:${minutes}`;
+}
+
+// time last updated
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
 
   let dayIndex = date.getDay();
   let days = [
@@ -24,7 +30,7 @@ function formatDate(timestamp) {
   ];
   let day = days[dayIndex];
 
-  return `Last updated: ${day}, ${hours}:${minutes}`;
+  return `Last updated: ${day}, ${formatHours(timestamp)}`;
 }
 
 // change weather image
@@ -106,13 +112,50 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+
+    forecastElement.innerHTML += `
+            <div class="col-4 week-day">
+              <h3 id="day-1">
+              ${formatHours(forecast.dt * 1000)}
+              </h3>
+            </div>
+            <div class="col-3 week-icon">
+              <img
+                src="${formatImage(forecast.weather[0].icon)}"
+                alt ="${forecast.weather[0].description}"
+                class="week-img"
+                id="forecast-img"
+              />
+            </div>
+            <div class="col-5 week-temp">
+              <h3>
+                ${Math.round(forecast.main.temp_min)}° |
+                <strong>
+                 ${Math.round(forecast.main.temp_max)}° 
+                </strong>
+              </h3>
+            </div>
+    `;
+  }
+}
+
 function searchCity(city) {
   let units = "metric";
   let apiKey = "f3691b18a7a9f34109b9d2f634be83aa";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
-
   axios.get(apiUrl).then(displayWeather);
+
+  apiEndpoint = "https://api.openweathermap.org/data/2.5/forecast";
+  apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSubmit(event) {
