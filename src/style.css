@@ -115,7 +115,7 @@ a:hover {
   margin-bottom: 15px;
 }
 .hr-2 {
-  margin-top: 15px;
+  margin-top: 5px;
   margin-bottom: 10px;
 }
 .week-img {
@@ -126,6 +126,9 @@ a:hover {
   right: -16px;
   top: -5px;
 }
-.bottom-row {
-  height: 29px;
+.week-day {
+  padding-left: 25px;
+}
+.week-temp {
+  padding-right: 25px;
 }
