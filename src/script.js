@@ -182,14 +182,14 @@ function getGeolocation() {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
 
-function convertToFarenheit(event) {
+function convertToFahrenheit(event) {
   event.preventDefault();
-  let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#current-temp");
-  temperatureElement.innerHTML = Math.round(farenheitTemperature);
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 
   celsiusLink.classList.remove("active");
-  farenheitLink.classList.add("active");
+  fahrenheitLink.classList.add("active");
 }
 
 function convertToCelsius(event) {
@@ -197,7 +197,7 @@ function convertToCelsius(event) {
   let temperatureElement = document.querySelector("#current-temp");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
-  farenheitLink.classList.remove("active");
+  fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
 }
 
@@ -211,8 +211,8 @@ searchForm.addEventListener("submit", handleSubmit);
 let geoButton = document.querySelector("#location-btn");
 geoButton.addEventListener("click", getGeolocation);
 
-let farenheitLink = document.querySelector("#farenheit-link");
-farenheitLink.addEventListener("click", convertToFarenheit);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
