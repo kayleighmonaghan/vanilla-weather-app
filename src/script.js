@@ -207,6 +207,9 @@ function convertToFahrenheit(event) {
 
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
+
+  fahrenheitLink.removeEventListener("click", convertToFahrenheit);
+  celsiusLink.addEventListener("click", convertToCelsius);
 }
 
 function convertToCelsius(event) {
@@ -229,6 +232,9 @@ function convertToCelsius(event) {
 
   fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
+
+  fahrenheitLink.addEventListener("click", convertToFahrenheit);
+  celsiusLink.removeEventListener("click", convertToCelsius);
 }
 
 let celsiusTemperature = null;
