@@ -129,16 +129,20 @@ function displayForecast(response) {
             <div class="col-3 week-icon">
               <img
                 src="${formatImage(forecast.weather[0].icon)}"
-                alt ="${forecast.weather[0].description}"
+                alt="${forecast.weather[0].description}"
                 class="week-img"
                 id="forecast-img"
               />
             </div>
             <div class="col-5 week-temp">
               <h3>
-                ${Math.round(forecast.main.temp_min)}° |
+              <span class="min-temp">${Math.round(
+                forecast.main.temp_min
+              )}</span>° |
                 <strong>
-                 ${Math.round(forecast.main.temp_max)}° 
+                <span class="max-temp">${Math.round(
+                  forecast.main.temp_max
+                )}</span>° 
                 </strong>
               </h3>
             </div>
@@ -188,6 +192,19 @@ function convertToFahrenheit(event) {
   let temperatureElement = document.querySelector("#current-temp");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 
+  let minTemp = document.querySelectorAll(".min-temp");
+  let maxTemp = document.querySelectorAll(".max-temp");
+
+  minTemp.forEach(function (min) {
+    let fahrenheitMinTemp = min.innerHTML;
+    min.innerHTML = `${Math.round((fahrenheitMinTemp * 9) / 5 + 32)}`;
+  });
+
+  maxTemp.forEach(function (max) {
+    let fahrenheitMaxTemp = max.innerHTML;
+    max.innerHTML = `${Math.round((fahrenheitMaxTemp * 9) / 5 + 32)}`;
+  });
+
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
 }
@@ -196,6 +213,19 @@ function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#current-temp");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+  let minTemp = document.querySelectorAll(".min-temp");
+  let maxTemp = document.querySelectorAll(".max-temp");
+
+  minTemp.forEach(function (min) {
+    let celsiusMinTemp = min.innerHTML;
+    min.innerHTML = `${Math.round(((celsiusMinTemp - 32) * 5) / 9)}`;
+  });
+
+  maxTemp.forEach(function (max) {
+    let celsiusMaxTemp = max.innerHTML;
+    max.innerHTML = `${Math.round(((celsiusMaxTemp - 32) * 5) / 9)}`;
+  });
 
   fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
