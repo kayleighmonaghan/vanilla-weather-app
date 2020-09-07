@@ -171,8 +171,11 @@ function retrievePosition(position) {
   let apiKey = "f3691b18a7a9f34109b9d2f634be83aa";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
-
   axios.get(apiUrl).then(displayWeather);
+
+  apiEndpoint = "https://api.openweathermap.org/data/2.5/forecast";
+  apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function getGeolocation() {
