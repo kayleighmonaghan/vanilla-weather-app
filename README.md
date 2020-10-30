@@ -19,5 +19,8 @@ Includes buttons to convert the Celsius (metric) temperature into Fahrenheit (im
 </li>
 </ul>
 <p>
-View it <a href="https://km-vanilla-weather.netlify.app/">here</a>
+View it <a href="https://km-vanilla-weather.netlify.app/">here</a>.
 </p>
+<p>View the ReactJS version <a href="https://github.com/kayleighmonaghan/react-weather-app">here</a>.</p>
+
+<p>Icons found on <a href="https://www.iconfinder.com/iconsets/weather-color-2">Iconfinder</a>.</p>
